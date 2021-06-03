@@ -103,12 +103,12 @@ def gra_(x,names,x_pre):
         y = cv2.Sobel(image, cv2.CV_16S, 0, 1)
         absX = cv2.convertScaleAbs(xx)
         absY = cv2.convertScaleAbs(y)
-        grad_image = cv2.addWeighted(absX, 0.5, absY, 0.5, 0) * 3
+        grad_image = cv2.addWeighted(absX, 0.5, absY, 0.5, 0)
         xx = cv2.Sobel(image_pre, cv2.CV_16S, 1, 0)
         y = cv2.Sobel(image_pre, cv2.CV_16S, 0, 1)
         absX = cv2.convertScaleAbs(xx)
         absY = cv2.convertScaleAbs(y)
-        grad_image_pre = cv2.addWeighted(absX, 0.5, absY, 0.5, 0) * 4
+        grad_image_pre = cv2.addWeighted(absX, 0.5, absY, 0.5, 0)
         img_rd = cv2.applyColorMap(grad_image, cv2.COLORMAP_JET)
         img_pre = cv2.applyColorMap(grad_image_pre, cv2.COLORMAP_JET)
         # cv2.imwrite(savefile_gra_rd + '/' + names[i] + '_gra_rd' + '.png', img_rd)
